@@ -8,7 +8,7 @@ export default function App() {
     <div>
       <Switch>
         {/* more pages to be added here later */}
-        <Route component={ShopPage} />
+        <Route component={HomePage} />
       </Switch>
     </div>
   );
