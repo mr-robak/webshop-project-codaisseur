@@ -21,7 +21,6 @@ export default function Cart() {
   console.log("items", items);
   return (
     <div>
-      <h1>Your shopping cart</h1>
       <table>
         {items.map((item) => {
           return <ItemInCart id={parseInt(item.id)} />;
