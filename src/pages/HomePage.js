@@ -7,5 +7,5 @@ import {
 import { selectItemsInCart } from "../store/cart/selectors";
 
 export default function HomePage() {
-  return <div>test</div>;
+  return <div>test homepage</div>;
 }
