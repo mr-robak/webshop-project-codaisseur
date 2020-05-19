@@ -1,9 +1,10 @@
-// import { combineReducers } from "redux";
-// import someFeatureReducer from "./someFeature/reducer";
+import { combineReducers } from "redux";
+import productsSliceReducer from "./products/reducer";
+import cartSliceReducer from "./cart/reducer";
 
-// const reducer = combineReducers({
-//   someFeature: someFeatureReducer
-//   // etc.
-// });
+const reducer = combineReducers({
+  products: productsSliceReducer,
+  cart: cartSliceReducer,
+});
 
-// export default reducer;
+export default reducer;
