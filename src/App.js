@@ -8,7 +8,7 @@ export default function App() {
     <div>
       <Switch>
         {/* more pages to be added here later */}
-        <Route component={HomePage} />
+        <Route exact path="/" component={HomePage} />
       </Switch>
     </div>
   );
