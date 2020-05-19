@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Webshop project
 
-## Available Scripts
+## Project outline
 
-In the project directory, you can run:
+Groups of two or three
 
-### `npm start`
+- Two (half) days
+- Goals:
+  - Practice working together on a Redux app
+  - Practice setting up a Redux project
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## User stories
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- As a customer, I want to see an overview of the products available, sort them by price or popularity, and filter them by some meaningful distinction (for example "tag" or "category")
 
-### `npm test`
+- As a customer, I want to always be able to see the amount of products in my "shopping cart" (i.e. on every page), and quickly navigate to the shopping cart page
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- As a customer, I want to see whether (and if so, how many times) I’ve added a product to my cart, near the relevant products wherever these are shown (e.g. on the homepage or a product page)
 
-### `npm run build`
+- As a customer, I want to get more information on a product on a product-specific page
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- As a customer, I want to be able to view my shopping cart, which products are in it, how many times, and what total price that adds up to. I also want to be able to adjust the number of items in that page, and to be able to empty the whole cart.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Wireframe sketch
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+included in the react-app folder "webshop_project.png"
 
-### `npm run eject`
+## How to get started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- One team member hosts the GitHub repository on their account, adds the other(s) as collaborator
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Spend an hour designing:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  - The structure of the store necessary. Which slices? Maybe a first sketch of dummy data, or an outlinee of the different actions you'll probably use
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  - The "theme" of the webshop. Make it as fun, serious, whymsical, stylish, or understyled as you want. I heard one of these student projects in the past was once called "Uncomfortable chair, for uncomfortable prices" — made me laugh :)
 
-## Learn More
+- Choose a programming strategy:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  1. Pair programming: you look at the same screen, one team member does the actual coding, but you have to pairs of eyes to figure out what to do. This can be very useful in the first few steps, or when unclear what to do.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  2. Work separately on different features. Create a feature branch off of master using git checkout -b some_feature. This can be very useful to ramp the development speed up, but make sure you communicate well about what is / is not part of what feature. This makes merging easier, and teamwork more pleasant.
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Start out with dummy data, hard-coded in the reducer file(s). As a next step, to practice with thunks and data loading, use https://jsonplaceholder.typicode.com/ to put that dummy data online and use it as if it were a real API.
