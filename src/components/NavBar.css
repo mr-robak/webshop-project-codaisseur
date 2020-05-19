@@ -1,0 +1,30 @@
+.NavBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+}
+
+.NavLink {
+  color: rgb(56, 56, 56);
+  background-color: white;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(228, 228, 228);
+  padding: 0.5em;
+  margin: 0.2em;
+  text-decoration: none;
+}
+
+.NavLink:hover {
+  background-color: rgb(224, 224, 224);
+}
+
+.NavLinkActive,
+.NavLinkActive:hover {
+  background-color: rgb(47, 47, 47);
+  font-weight: bolder;
+  color: white;
+}
