@@ -17,12 +17,18 @@ export default function ItemInCart(props) {
     <tr>
       <td>{product.name}</td>
       <td>
-        <button type="button" className="btn btn-danger" onClick={removeItem}>
+        <button
+          type="button"
+          className="btn btn-danger mx-1"
+          onClick={removeItem}
+        >
           -
         </button>
-      </td>
-      <td>
-        <button type="button" className="btn btn-success" onClick={addItem}>
+        <button
+          type="button"
+          className="btn btn-success mx-1"
+          onClick={addItem}
+        >
           +
         </button>
       </td>

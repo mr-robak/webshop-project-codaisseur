@@ -42,17 +42,18 @@ export default function cartSliceReducer(state = initialState, action) {
       //new state to return
       const newState = [
         ...state.reduce((cart, item) => {
-          if (item.prodId === id) {
-            if (item.amount > 1) {
-              cart.push({ ...item, amount: --item.amount });
-            }
-          } else {
+          if (item.prodId === id && item.amount > 1) {
+            cart.push({ ...item, amount: --item.amount });
+          } else if (item.prodId !== id) {
             cart.push(item);
           }
           return cart;
         }, []),
       ];
       return newState;
+    }
+    case "EMPTY_CART": {
+      return initialState;
     }
     default: {
       return state;

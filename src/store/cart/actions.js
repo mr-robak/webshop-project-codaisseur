@@ -15,3 +15,10 @@ export function removeFromCart(id) {
     },
   };
 }
+
+export function emptyCart() {
+  return {
+    type: "EMPTY_CART",
+    payload: {},
+  };
+}
