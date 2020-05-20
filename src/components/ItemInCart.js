@@ -1,17 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectProductById } from "../store/products/selectors";
+import { prettyDOM } from "@testing-library/react";
 
 export default function ItemInCart(props) {
-  const productDetails = useSelector(selectProductById(parseInt(props.id)));
-  console.log(productDetails);
+  const product = useSelector(selectProductById(props.id));
+
   return (
-    <h1>test item in cart </h1>
-    // <tr>
-    //   <td>{props.name}</td>
-    //   <td>{props.amount}</td>
-    //   <td>{props.price}</td>
-    //   <td>{props.price * props.amount}</td>
-    // </tr>
+    <tr>
+      <td>{product.name}</td>
+      <td>{props.amount}x</td>
+      <td>€{product.price}</td>
+      <td>€{product.price * props.amount}</td>
+    </tr>
   );
 }

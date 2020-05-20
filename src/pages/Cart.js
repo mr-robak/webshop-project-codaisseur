@@ -23,9 +23,12 @@ export default function Cart() {
     <div>
       <h1>Your shopping cart</h1>
       <table>
-        {items.map((item) => {
-          return <ItemInCart id={parseInt(item.id)} />;
-        })}
+        <tbody>
+          {items.map((item) => {
+            const itemId = parseInt(item.prodId);
+            return <ItemInCart key={itemId} id={itemId} amount={item.amount} />;
+          })}
+        </tbody>
       </table>
     </div>
   );
