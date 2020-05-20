@@ -19,17 +19,11 @@ export default function Cart() {
   //local state for total
   const [total, setTotal] = useState(0);
   const totalArr = [];
-  useEffect(() => setTotal(totalArr), [totalArr]);
+  useEffect(() => setTotal(totalArr.reduce((acc, val) => acc + val)), [
+    totalArr,
+  ]);
   const items = useSelector(selectItemsInCart);
   const addToTotal = (price) => totalArr.push(price);
-  console.log("items length", items.length);
-  console.log("totalArr length", totalArr.length);
-  if (totalArr.length === items.length) {
-    console.log("if is ture");
-    setTotal(totalArr.reduce((acc, val) => acc + val));
-  }
-  console.log("totalArr", totalArr);
-  console.log("total: ", total);
 
   return (
     <div className="container my-3">
@@ -53,9 +47,7 @@ export default function Cart() {
             <td>
               <b>total</b>
             </td>
-            <td>
-              €{total.length > 0 ? total.reduce((acc, val) => acc + val) : null}
-            </td>
+            <td>€{total}</td>
           </tr>
         </tbody>
       </table>
