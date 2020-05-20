@@ -1,8 +1,14 @@
 import React from "react";
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectItemsInCart } from "../store/cart/selectors";
 
 export default function NavBar() {
+  const itemsInCart = useSelector(selectItemsInCart).length;
+
+  console.log("itemsInCart", itemsInCart);
+
   return (
     <div>
       <NavLink
@@ -19,7 +25,7 @@ export default function NavBar() {
         className="NavLink"
         activeClassName="NavLinkActive"
       >
-        Cart
+        Cart<strong>{itemsInCart !== 0 ? `: ${itemsInCart}` : null}</strong>
       </NavLink>
     </div>
   );
