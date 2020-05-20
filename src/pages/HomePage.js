@@ -57,13 +57,13 @@ export default function HomePage() {
       break;
     }
     case "tags": {
-      console.log("tags switch");
+      // console.log("tags switch");
       const selcteTags = [...tags].filter((t, i) => tagState[i]);
       const filterProd = products.filter(
         (prod) => prod.tags.some((tag) => selcteTags.includes(tag))
         // return prod.tags.some((tag) => selcteTags.includes(tag));
       );
-      console.log("filtered products", filterProd);
+      // console.log("filtered products", filterProd);
       // setProducts([...filterProd]);
       products = filterProd;
       break;
