@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectItemsInCart } from "../store/cart/selectors";
 import ItemInCart from "../components/ItemInCart";
+import { formatPrice } from "../helper/helperFunctions";
 
 /* TO-DO 
 [] list items in html table, one row per item, with the following columns
@@ -47,10 +48,12 @@ export default function Cart() {
           <tr>
             <td></td>
             <td></td>
+            <td></td>
+            <td></td>
             <td>
               <b>total</b>
             </td>
-            <td>€{total}</td>
+            <td>{formatPrice(total)}</td>
           </tr>
         </tbody>
       </table>

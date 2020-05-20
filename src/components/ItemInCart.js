@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectProductById } from "../store/products/selectors";
 import { removeFromCart, addToCart } from "../store/cart/actions";
+import { formatPrice } from "../helper/helperFunctions";
 
 export default function ItemInCart(props) {
   const dispatch = useDispatch();
@@ -26,8 +27,8 @@ export default function ItemInCart(props) {
         </button>
       </td>
       <td>{props.amount}x</td>
-      <td>€{product.price}</td>
-      <td>€{product.price * props.amount}</td>
+      <td>{formatPrice(product.price)}</td>
+      <td>{formatPrice(product.price * props.amount)}</td>
     </tr>
   );
 }
