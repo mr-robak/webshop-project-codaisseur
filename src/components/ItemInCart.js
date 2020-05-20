@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectProductById } from "../store/products/selectors";
 import { removeFromCart, addToCart } from "../store/cart/actions";
 import { formatPrice } from "../helper/helperFunctions";
+import AddToCartButton from "./AddToCartButton";
+import RemoveFromCartButton from "./RemoveFromCartButton";
 
 export default function ItemInCart(props) {
   const dispatch = useDispatch();
@@ -17,20 +19,8 @@ export default function ItemInCart(props) {
     <tr>
       <td>{product.name}</td>
       <td>
-        <button
-          type="button"
-          className="btn btn-danger mx-1"
-          onClick={removeItem}
-        >
-          -
-        </button>
-        <button
-          type="button"
-          className="btn btn-success mx-1"
-          onClick={addItem}
-        >
-          +
-        </button>
+        <RemoveFromCartButton id={product.id} />
+        <AddToCartButton id={product.id} />
       </td>
       <td>{props.amount}x</td>
       <td>{formatPrice(product.price)}</td>
