@@ -36,7 +36,25 @@ export default function cartSliceReducer(state = initialState, action) {
         return [...state, { prodId: id, amount: 1 }];
       }
     }
-
+    case "REMOVE_FROM_CART": {
+      //product id for removing one item of that product
+      const id = action.payload.productId.toString();
+      //new state to return
+      const newState = [
+        ...state.reduce((cart, item) => {
+          if (item.prodId === id && item.amount > 1) {
+            cart.push({ ...item, amount: --item.amount });
+          } else if (item.prodId !== id) {
+            cart.push(item);
+          }
+          return cart;
+        }, []),
+      ];
+      return newState;
+    }
+    case "EMPTY_CART": {
+      return initialState;
+    }
     default: {
       return state;
     }
