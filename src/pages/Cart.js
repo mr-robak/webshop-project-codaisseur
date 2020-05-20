@@ -22,7 +22,7 @@ export default function Cart() {
   return (
     <div>
       <h1>Your shopping cart</h1>
-      <table>
+      <table className="table table-borderless">
         <tbody>
           {items.map((item) => {
             const itemId = parseInt(item.prodId);
