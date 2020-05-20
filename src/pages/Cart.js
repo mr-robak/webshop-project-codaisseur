@@ -21,10 +21,14 @@ export default function Cart() {
   console.log("items", items);
   return (
     <div>
-      <table>
-        {items.map((item) => {
-          return <ItemInCart id={parseInt(item.id)} />;
-        })}
+      <h1>Your shopping cart</h1>
+      <table className="table table-borderless">
+        <tbody>
+          {items.map((item) => {
+            const itemId = parseInt(item.prodId);
+            return <ItemInCart key={itemId} id={itemId} amount={item.amount} />;
+          })}
+        </tbody>
       </table>
     </div>
   );
