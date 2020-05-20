@@ -1,10 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {
-  selectAllProducts,
-  selectProductById,
-} from "../store/products/selectors";
+import { selectAllProducts } from "../store/products/selectors";
 import ProductCard from "../components/ProductCard";
+import "./HomePage.css";
 
 export default function HomePage() {
   const products = useSelector(selectAllProducts);
@@ -25,9 +23,10 @@ export default function HomePage() {
   });
 
   return (
-    <div>
-      <h1>Products</h1>
-      {renderProductCards}
+    <div className="HomePage">
+      <label for="sort-by">Sort by:</label>
+      <select id="sort-by"></select>
+      <p>{renderProductCards}</p>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectItemsInCart } from "../store/cart/selectors";
+import cartImg from "../images/shop-cart-svgrepo-com.svg";
 
 export default function NavBar() {
   const itemsInCart = useSelector(selectItemsInCart).length;
@@ -10,7 +11,7 @@ export default function NavBar() {
   console.log("itemsInCart", itemsInCart);
 
   return (
-    <div>
+    <div className="NavBar">
       <NavLink
         to="/"
         exact={true}
@@ -22,10 +23,11 @@ export default function NavBar() {
       <NavLink
         to="/cart"
         exact={true}
-        className="NavLink"
+        className="NavLink2"
         activeClassName="NavLinkActive"
       >
-        Cart<strong>{itemsInCart !== 0 ? `: ${itemsInCart}` : null}</strong>
+        <img src={cartImg} className="cart" alt="" />
+        <div className="txt">{itemsInCart !== 0 ? itemsInCart : null}</div>
       </NavLink>
     </div>
   );

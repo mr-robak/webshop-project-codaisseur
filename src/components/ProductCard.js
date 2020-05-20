@@ -15,9 +15,9 @@ export default function ProductCard(props) {
   };
   return (
     <div className="ProductCard">
-      <p>{name}</p>
       <img src={imageUrl} alt={name} />
       <p>
+        <p>{name}</p>
         <span>€ {price}</span> <button onClick={addItemToCart}>Add</button>
       </p>
     </div>

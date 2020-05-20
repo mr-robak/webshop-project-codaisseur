@@ -2,8 +2,10 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: 1.3em;
+  max-width: 800px;
+  /* height: 2em; */
 }
 
 .NavLink {
@@ -20,6 +22,7 @@
 
 .NavLink:hover {
   background-color: rgb(224, 224, 224);
+  text-decoration: none;
 }
 
 .NavLinkActive,
@@ -27,4 +30,35 @@
   background-color: rgb(47, 47, 47);
   font-weight: bolder;
   color: white;
+  text-decoration: none;
+}
+.NavBar2 {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.cart {
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  right: 1px;
+
+  /* border: none; */
+  /* background-color: white; */
+  width: 5em;
+  height: 3em;
+  padding: 0;
+  margin: 0;
+}
+
+.txt {
+  position: absolute;
+  top: 21px;
+  right: 35px;
+  transform: translate(-50%, -50%);
+
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  font-weight: bolder;
+  text-decoration: none;
 }
