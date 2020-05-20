@@ -5,19 +5,21 @@ const initialState = [
     description:
       "THESE KITTIES LOVE TO HELP - Keep your tissues close at hand with the help of your trusty feline friend.  HUMOROUS TISSUE HOLDER - You are certain to get loads of laughs and visitors to your powder room or office will love to grab a tissue from this quirky cat. FITS SQUARE TISSUE BOXES - Measures 12.5 wide, fits standard square tissue boxes.",
     price: 36.23,
-    soldNr: 10,
+    soldNr: 21,
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/712ePtgJeeL._AC_SL1500_.jpg",
+    tags: ["animals", "hygene", "butt", "gifts"],
   },
   {
     id: 2,
     name: "Unique Flavored Soda, 6-Pack",
     description:
       "These drinks taste exactly like real, popular foods when they're actually just carbonated drinks. Challenge your senses by sipping on flavors like buffalo wing soda, corn soda, bacon soda, or pumpkin pie soda. Made in the USA. Pure cane sugar. 170 calories per soda. 100% authentic taste.",
-    price: 5,
-    soldNr: 0,
+    price: 9,
+    soldNr: 12,
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/71J8cee4XfL._SL1440_.jpg",
+    tags: ["food", "healthy", "drinks"],
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const initialState = [
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/81m%2BJJVVtAL._AC_SL1500_.jpg",
     soldNr: 5,
+    tags: ["animals", "pets", "professional"],
   },
   {
     id: 4,
@@ -37,7 +40,8 @@ const initialState = [
     price: 299.99,
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/51UpXLcyYaL._AC_SL1000_.jpg",
-    soldNr: 5,
+    soldNr: 4,
+    tags: ["gifts", "healthy", "eco"],
   },
   {
     id: 5,
@@ -52,7 +56,8 @@ const initialState = [
       Complete with prayers, poetry, a daily affirmations journal, and thoughtful quotations from leading self-help experts, How to Live with a Huge Penis will inspire men of all shapes and sizes.`,
     price: 11.08,
     imageUrl: "https://m.media-amazon.com/images/I/41aTjQc11vL.jpg",
-    soldNr: 5,
+    soldNr: 0,
+    tags: ["books", "self-developement", "real life problems"],
   },
   {
     id: 6,
@@ -66,7 +71,8 @@ Our country—and our cats—stand at a precipice. It will take courage, and it 
             `,
     price: 8.39,
     imageUrl: "https://m.media-amazon.com/images/I/51iuvSETecL.jpg",
-    soldNr: 5,
+    soldNr: 2,
+    tags: ["books", "pets", "guns"],
   },
   {
     id: 7,
@@ -76,7 +82,7 @@ Our country—and our cats—stand at a precipice. It will take courage, and it 
     price: 18.99,
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/81YxctBNFLL._AC_SL1500_.jpg",
-    soldNr: 5,
+    soldNr: 14,
   },
   {
     id: 8,
@@ -86,7 +92,8 @@ Our country—and our cats—stand at a precipice. It will take courage, and it 
     price: 50.73,
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/51ZIPzbooyL._AC_.jpg",
-    soldNr: 5,
+    soldNr: 7,
+    tags: ["gifts", "house", "style"],
   },
   {
     id: 9,
@@ -96,7 +103,8 @@ Our country—and our cats—stand at a precipice. It will take courage, and it 
     price: 5.04,
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/413XFfccjkL._AC_.jpg",
-    soldNr: 5,
+    soldNr: 4,
+    tags: ["gifts", "professional"],
   },
   {
     id: 10,
@@ -106,7 +114,8 @@ Our country—and our cats—stand at a precipice. It will take courage, and it 
     price: 99,
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/61thviNNEhL._AC_SL1000_.jpg",
-    soldNr: 5,
+    soldNr: 1,
+    tags: ["health", "self development", "style"],
   },
   {
     id: 11,
@@ -118,7 +127,8 @@ It's not a self help book. But for those who know what it's like living with a l
 It's also THE BEST SECRET SANTA BOOK!`,
     price: 6.41,
     imageUrl: "https://m.media-amazon.com/images/I/517UeGIlrML.jpg",
-    soldNr: 5,
+    soldNr: 1000,
+    tags: ["books", "self-developement", "real life problems"],
   },
 ];
 
