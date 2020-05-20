@@ -10,7 +10,7 @@ import { selectProductById } from "../store/products/selectors";
     [] buttons to add/remove product
     [x] amount
     [x] single price 
-[] one row for total
+[x] one row for total
 [] one button to empty the cart
 [] one button to buy stuff
 */
