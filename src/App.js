@@ -12,6 +12,7 @@ export default function App() {
       <Switch>
         {/* more pages to be added here later */}
         <Route exact path="/" component={HomePage} />
+        <Route path="/cart" component={Cart} />
       </Switch>
     </div>
   );
