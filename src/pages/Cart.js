@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectItemsInCart } from "../store/cart/selectors";
 import ItemInCart from "../components/ItemInCart";
-import { selectProductById } from "../store/products/selectors";
 
 /* TO-DO 
 [] list items in html table, one row per item, with the following columns
@@ -18,7 +17,8 @@ import { selectProductById } from "../store/products/selectors";
 export default function Cart() {
   //local state for total
   const [total, setTotal] = useState(0);
-  const totalArr = [];
+  //totalArr for appending prices (used by the callback addToTotal)
+  const totalArr = [0];
   useEffect(() => setTotal(totalArr.reduce((acc, val) => acc + val)), [
     totalArr,
   ]);
@@ -51,6 +51,9 @@ export default function Cart() {
           </tr>
         </tbody>
       </table>
+      {/* <button type="button" className="btn btn-secondary" onClick={}>
+        Empty cart
+      </button> */}
     </div>
   );
 }
