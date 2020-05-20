@@ -56,7 +56,7 @@ export default function Cart() {
       >
         Empty cart
       </button>
-      <Link>
+      <Link to="/checkout">
         <button type="button" className="btn btn-dark mx-2">
           Buy
         </button>

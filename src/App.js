@@ -13,6 +13,7 @@ export default function App() {
         {/* more pages to be added here later */}
         <Route exact path="/" component={HomePage} />
         <Route path="/cart" component={Cart} />
+        <Route path="/checkout" />
       </Switch>
     </div>
   );
