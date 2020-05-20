@@ -1,79 +1,89 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { selectAllProducts } from "../store/products/selectors";
+import { selectAllProducts, selectAllTags } from "../store/products/selectors";
 import ProductCard from "../components/ProductCard";
+
 import "./HomePage.css";
 
 export default function HomePage() {
-  const [products, setProducts] = useState(useSelector(selectAllProducts));
   const [sort, setSort] = useState("default");
-  // const [order, setOrder] = useState("");
+  const [order, setOrder] = useState("");
 
-  // const products = useSelector(selectAllProducts);
+  const tags = useSelector(selectAllTags);
+  const [tagState, setTagState] = useState([...tags].map((tag) => false));
+
+  let products = useSelector(selectAllProducts);
+
+  const toggleTag = (event, button) => {
+    // console.log(buttTag);
+    const buttonIndex = parseInt(event.target.value);
+    // console.log("button inx typeof", typeof buttonIndex);
+    // console.log(!tagState[buttonIndex]);
+    const newState = tagState.map((t, i) => {
+      // console.log("buttn In", buttonIndex, "map index", i, i === buttonIndex);
+      return i === buttonIndex ? !t : t;
+    });
+
+    setTagState(newState);
+    //
+  };
+
+  const renderTags =
+    sort !== "tags"
+      ? null
+      : tags.map((tag, index) => {
+          const clss = tagState[index] ? "tagOn" : "tagOff";
+          return (
+            <button
+              key={index}
+              value={index}
+              onClick={(e) => toggleTag(e, { tag })}
+              className={clss}
+            >
+              {tag}
+            </button>
+          );
+        });
 
   // console.log(products);
 
-  // const sortProducts = products;
-
   switch (sort) {
     case "price": {
-      // console.log("switch", sort);
       products.sort((a, b) => a.price - b.price);
       break;
     }
     case "soldNr": {
-      // console.log("switch", sort);
       products.sort((a, b) => b.soldNr - a.soldNr);
+      break;
+    }
+    case "tags": {
+      console.log("tags switch");
+      const selcteTags = [...tags].filter((t, i) => tagState[i]);
+      const filterProd = products.filter(
+        (prod) => prod.tags.some((tag) => selcteTags.includes(tag))
+        // return prod.tags.some((tag) => selcteTags.includes(tag));
+      );
+      console.log("filtered products", filterProd);
+      // setProducts([...filterProd]);
+      products = filterProd;
       break;
     }
 
     default:
-      // console.log("switch", sort);
       break;
   }
 
-  // if (order === "ascending") {
-  //   const newProd = [...products].sort((a, b) => {
-  //     return a.price - b.price;
-  //   });
-  //   // setProducts(newProd);
-  // } else if (order === "descending") {
-  //   const newProd = [...products].sort((a, b) => {
-  //     return b.price - a.price;
-  //   });
-  //   console.log(newProd);
-  //   // setProducts(newProd);
-  // }
-
-  // switch (order) {
-  //   case "ascending": {
-  //     console.log("switchA", sort);
-  //     console.log("order", order);
-  //     const newProd = [...products].sort((a, b) => a[sort] - b[sort]);
-  //     setProducts(newProd);
-  //     // console.log(products.map((p) => p[sort]));
-  //     break;
-  //   }
-  //   case "descending": {
-  //     console.log("switchD", sort);
-  //     console.log("order", order);
-  //     const newProd = [...products].sort((a, b) => b[sort] - a[sort]);
-  //     setProducts(newProd);
-  //     console.log(newProd);
-  //     break;
-  //   }
-
-  //   default:
-  //     console.log("switch Def", sort);
-  //     console.log("order", order);
-  //     break;
-  // }
+  if (order === "ascending") {
+    products.sort((a, b) => a[sort] - b[sort]);
+  } else if (order === "descending") {
+    products.sort((a, b) => b[sort] - a[sort]);
+  }
 
   const renderProductCards = products.map((product, index) => {
     const { id, name, price, imageUrl } = product;
     return (
       <ProductCard
-        key={index}
+        key={index + name}
         name={name}
         id={id}
         price={price}
@@ -82,8 +92,8 @@ export default function HomePage() {
     );
   });
 
-  // const showSelection =
-  //   sort === "price" ? true : sort === "soldNr" ? true : false;
+  const showSelection =
+    sort === "price" ? true : sort === "soldNr" ? true : false;
 
   return (
     <div className="HomePage">
@@ -99,16 +109,13 @@ export default function HomePage() {
         <option value="soldNr">popularity</option>
         <option value="tags">tags</option>
       </select>{" "}
-      {/* {showSelection ? (
-        <select
-          onChange={(e) => {
-            setOrder(e.target.value);
-          }}
-        >
+      {showSelection ? (
+        <select onChange={(e) => setOrder(e.target.value)}>
           <option value="ascending">ascending</option>
           <option value="descending">descending</option>
         </select>
-      ) : null} */}
+      ) : null}{" "}
+      {renderTags}
       <p>{renderProductCards}</p>
     </div>
   );

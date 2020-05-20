@@ -12,7 +12,7 @@ export default function Product(props) {
     <div className="card mb-3 w-90">
       <div className="row no-gutters">
         <div className="col-md-4">
-          <img src={props.url} className="card-img" alt="image of product" />
+          <img src={props.url} className="card-img" alt=" product" />
           <h3 className="my-3">{formatPrice(props.price)}</h3>
           <div className="row w-90">
             <RemoveFromCartButton id={props.id} />

@@ -83,6 +83,7 @@ Our country—and our cats—stand at a precipice. It will take courage, and it 
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/81YxctBNFLL._AC_SL1500_.jpg",
     soldNr: 14,
+    tags: ["gifts", "house", "style"],
   },
   {
     id: 8,
@@ -93,7 +94,7 @@ Our country—and our cats—stand at a precipice. It will take courage, and it 
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/51ZIPzbooyL._AC_.jpg",
     soldNr: 7,
-    tags: ["gifts", "house", "style"],
+    tags: ["music", "art", "style"],
   },
   {
     id: 9,
@@ -115,7 +116,7 @@ Our country—and our cats—stand at a precipice. It will take courage, and it 
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/61thviNNEhL._AC_SL1000_.jpg",
     soldNr: 1,
-    tags: ["health", "self development", "style"],
+    tags: ["health", "self-development", "style"],
   },
   {
     id: 11,
@@ -128,7 +129,7 @@ It's also THE BEST SECRET SANTA BOOK!`,
     price: 6.41,
     imageUrl: "https://m.media-amazon.com/images/I/517UeGIlrML.jpg",
     soldNr: 1000,
-    tags: ["books", "self-developement", "real life problems"],
+    tags: ["books", "self-development", "real life problems"],
   },
 ];
 

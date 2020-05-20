@@ -8,7 +8,7 @@ import cartImg from "../images/shop-cart-svgrepo-com.svg";
 export default function NavBar() {
   const itemsInCart = useSelector(selectItemsInCart).length;
 
-  console.log("itemsInCart", itemsInCart);
+  // console.log("itemsInCart", itemsInCart);
 
   return (
     <div className="NavBar">

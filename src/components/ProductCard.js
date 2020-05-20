@@ -1,23 +1,36 @@
 import React from "react";
 import "./ProductCard.css";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../store/cart/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../store/cart/actions";
+import { Link } from "react-router-dom";
+import { selectItemById } from "../store/cart/selectors";
 
 export default function ProductCard(props) {
-  //   console.log("props", props);
   const dispatch = useDispatch();
 
   const { id, name, price, imageUrl } = props;
 
+  const isInCart = useSelector(selectItemById(id));
+
   const addItemToCart = () => {
     dispatch(addToCart(id));
-    // console.log("clicked!!!", id);
   };
+
+  const showRemove = isInCart ? (
+    <span>
+      <button onClick={() => dispatch(removeFromCart(id))}>-</button>
+      {isInCart.amount} in cart
+    </span>
+  ) : null;
+
   return (
     <div className="ProductCard">
-      <img src={imageUrl} alt={name} />
+      <Link to={`product/${id}`}>
+        <img src={imageUrl} alt={name} />
+      </Link>
       <p>{name}</p>
-      <span>€ {price}</span> <button onClick={addItemToCart}>Add</button>
+      <span>€ {price}</span> {showRemove}
+      <button onClick={addItemToCart}>+</button>
     </div>
   );
 }
