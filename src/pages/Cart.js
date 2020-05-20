@@ -19,10 +19,13 @@ export default function Cart() {
   const [total, setTotal] = useState(0);
   //totalArr for appending prices (used by the callback addToTotal)
   const totalArr = [0];
+  //updating the total as new items are added
   useEffect(() => setTotal(totalArr.reduce((acc, val) => acc + val)), [
     totalArr,
   ]);
+  //get items from store
   const items = useSelector(selectItemsInCart);
+  //callback function for component ItemInCart
   const addToTotal = (price) => totalArr.push(price);
 
   return (
