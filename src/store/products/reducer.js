@@ -5,7 +5,7 @@ const initialState = [
     description:
       "THESE KITTIES LOVE TO HELP - Keep your tissues close at hand with the help of your trusty feline friend.  HUMOROUS TISSUE HOLDER - You are certain to get loads of laughs and visitors to your powder room or office will love to grab a tissue from this quirky cat. FITS SQUARE TISSUE BOXES - Measures 12.5 wide, fits standard square tissue boxes.",
     price: 36.23,
-    soldNr: 5,
+    soldNr: 21,
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/712ePtgJeeL._AC_SL1500_.jpg",
     tags: ["animals", "hygene", "butt", "gifts"],
@@ -15,7 +15,7 @@ const initialState = [
     name: "Unique Flavored Soda, 6-Pack",
     description:
       "These drinks taste exactly like real, popular foods when they're actually just carbonated drinks. Challenge your senses by sipping on flavors like buffalo wing soda, corn soda, bacon soda, or pumpkin pie soda. Made in the USA. Pure cane sugar. 170 calories per soda. 100% authentic taste.",
-    price: 5,
+    price: 9,
     soldNr: 12,
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/71J8cee4XfL._SL1440_.jpg",
@@ -82,7 +82,7 @@ Our country—and our cats—stand at a precipice. It will take courage, and it 
     price: 18.99,
     imageUrl:
       "https://images-na.ssl-images-amazon.com/images/I/81YxctBNFLL._AC_SL1500_.jpg",
-    soldNr: 18,
+    soldNr: 14,
   },
   {
     id: 8,
@@ -127,7 +127,7 @@ It's not a self help book. But for those who know what it's like living with a l
 It's also THE BEST SECRET SANTA BOOK!`,
     price: 6.41,
     imageUrl: "https://m.media-amazon.com/images/I/517UeGIlrML.jpg",
-    soldNr: 25,
+    soldNr: 1000,
     tags: ["books", "self-developement", "real life problems"],
   },
 ];

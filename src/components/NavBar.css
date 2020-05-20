@@ -34,12 +34,12 @@
 }
 .NavBar2 {
   position: relative;
-  text-align: center;
+  /* text-align: center; */
   color: white;
 }
 .cart {
   position: absolute;
-  text-align: center;
+
   top: 1px;
   right: 1px;
 
@@ -54,9 +54,9 @@
 .txt {
   position: absolute;
   top: 21px;
-  right: 35px;
+  right: 28px;
   transform: translate(-50%, -50%);
-
+  /* text-align: right; */
   color: rgb(255, 255, 255);
   font-size: 1em;
   font-weight: bolder;
