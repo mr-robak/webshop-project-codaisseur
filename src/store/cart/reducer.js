@@ -36,7 +36,14 @@ export default function cartSliceReducer(state = initialState, action) {
         return [...state, { prodId: id, amount: 1 }];
       }
     }
-
+    case "REMOVE_FROM_CART": {
+      const id = action.payload.productId.toString();
+      //store value of item in cart
+      const item = state.find((item) => item.prodId === id);
+      //reduce amount by 1
+      item.amount--;
+      return [...state, item];
+    }
     default: {
       return state;
     }

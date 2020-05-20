@@ -6,3 +6,12 @@ export function addToCart(id) {
     },
   };
 }
+
+export function removeFromCart(id) {
+  return {
+    type: "REMOVE_FROM_CART",
+    payload: {
+      productId: id,
+    },
+  };
+}
