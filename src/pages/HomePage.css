@@ -1,3 +1,7 @@
 .HomePage {
   max-width: 900px;
 }
+
+.HomePage select {
+  display: inline-block;
+}

@@ -15,12 +15,8 @@ export default function HomePage() {
   let products = useSelector(selectAllProducts);
 
   const toggleTag = (event, button) => {
-    // console.log(buttTag);
     const buttonIndex = parseInt(event.target.value);
-    // console.log("button inx typeof", typeof buttonIndex);
-    // console.log(!tagState[buttonIndex]);
     const newState = tagState.map((t, i) => {
-      // console.log("buttn In", buttonIndex, "map index", i, i === buttonIndex);
       return i === buttonIndex ? !t : t;
     });
 
@@ -45,8 +41,6 @@ export default function HomePage() {
           );
         });
 
-  // console.log(products);
-
   switch (sort) {
     case "price": {
       products.sort((a, b) => a.price - b.price);
@@ -57,14 +51,10 @@ export default function HomePage() {
       break;
     }
     case "tags": {
-      // console.log("tags switch");
       const selcteTags = [...tags].filter((t, i) => tagState[i]);
-      const filterProd = products.filter(
-        (prod) => prod.tags.some((tag) => selcteTags.includes(tag))
-        // return prod.tags.some((tag) => selcteTags.includes(tag));
+      const filterProd = products.filter((prod) =>
+        prod.tags.some((tag) => selcteTags.includes(tag))
       );
-      // console.log("filtered products", filterProd);
-      // setProducts([...filterProd]);
       products = filterProd;
       break;
     }
@@ -116,7 +106,9 @@ export default function HomePage() {
         </select>
       ) : null}{" "}
       {renderTags}
-      <p>{renderProductCards}</p>
+      <br />
+      {renderProductCards}
+      <br />
     </div>
   );
 }

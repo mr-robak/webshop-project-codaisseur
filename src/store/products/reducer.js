@@ -57,7 +57,7 @@ const initialState = [
     price: 11.08,
     imageUrl: "https://m.media-amazon.com/images/I/41aTjQc11vL.jpg",
     soldNr: 0,
-    tags: ["books", "self-developement", "real life problems"],
+    tags: ["books", "self-development", "real life problems"],
   },
   {
     id: 6,
@@ -72,7 +72,7 @@ Our country—and our cats—stand at a precipice. It will take courage, and it 
     price: 8.39,
     imageUrl: "https://m.media-amazon.com/images/I/51iuvSETecL.jpg",
     soldNr: 2,
-    tags: ["books", "pets", "guns"],
+    tags: ["books", "pets", "guns", "animals"],
   },
   {
     id: 7,
