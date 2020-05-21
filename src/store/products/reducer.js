@@ -133,6 +133,9 @@ It's also THE BEST SECRET SANTA BOOK!`,
   },
 ];
 
+const neWane = JSON.stringify(initialState);
+console.log(neWane);
+
 export default function productsSliceReducer(state = initialState, action) {
   switch (action.type) {
     case "XXXXXX":
