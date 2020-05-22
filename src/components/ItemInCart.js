@@ -5,6 +5,7 @@ import { selectProductById } from "../store/products/selectors";
 import { formatPrice } from "../helper/helperFunctions";
 import AddToCartButton from "./AddToCartButton";
 import RemoveFromCartButton from "./RemoveFromCartButton";
+import { Link } from "react-router-dom";
 
 export default function ItemInCart(props) {
   // const dispatch = useDispatch();
@@ -17,7 +18,9 @@ export default function ItemInCart(props) {
 
   return (
     <tr>
-      <td>{product.name}</td>
+      <td>
+        <Link to={"/product/" + product.id}>{product.name}</Link>
+      </td>
       <td>
         <RemoveFromCartButton id={product.id} />
         <AddToCartButton id={product.id} />
